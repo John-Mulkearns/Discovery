@@ -7,7 +7,6 @@ using Microsoft.OpenApi.Models;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace API
 {
     public class Startup
@@ -19,8 +18,12 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
 
+  services.AddDbContext<DataContext>(options => 
+                          {  options.UseSqlServer(_config.GetConnectionString("DefaultConnection"));    });
+
+
           services.AddDbContext<DataContext>(options =>
-            {                options.UseSqlite(_config.GetConnectionString("DefaultConnection"));            });
+            {                options.UseSqlite(_config.GetConnectionString("DefaultSQLiteConnection"));            });
  
  /* 
             var conn = "Server = LAPTOP-8DMLOOD0\\SQLEXPRESS2016; Database = A---EFcfDbGenVSCode44; Trusted_Connection = True; ";
@@ -28,11 +31,11 @@ namespace API
 */
 
 
-
+            services.AddCors(); 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1.02" });
             });
         }
 
@@ -49,13 +52,13 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+             app.UseCors(corsPolicy=>corsPolicy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins("https://localhost:4200"));
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints =>  {  endpoints.MapControllers();  });
         }
     }
 }
