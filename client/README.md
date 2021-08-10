@@ -1,3 +1,38 @@
+
+
+Simple  Client login and register
+
+ Created a nav bar.
+
+ Applied Angular template forms syntax to html.
+
+ Created basic Angular services for Injection.
+
+ Used conditionals to show and remove content.
+
+ Used angular bootstrap components - dropdown.
+
+ used observables to persisting the login without async pipe
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Inserts
 
 

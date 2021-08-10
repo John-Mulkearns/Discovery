@@ -30,8 +30,27 @@ export class NavComponent implements OnInit {
    
   }
 
-  logout() {     this.loggedIn=false;  }
+  logout() {   
+    this.accountService.logout();
+    this.loggedIn=false;  }
 
-  /*logout() {     this.accountService.logout();  }  */
+
+
+/* temp dev method used to inspect local storage with chrome tools */
+
+getCurrentUser() {
+this.accountService.currentUser$.subscribe(user =>
+  {
+    this.loggedIn=!!user;
+  },
+  error=> {
+    console.log(error);
+  }
+
+
+  )
+
+}
+
 
 }
