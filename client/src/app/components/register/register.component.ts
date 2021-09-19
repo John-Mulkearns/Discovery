@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { AccountService } from '../../_services/account.service';
 
 @Component({
   selector: 'app-register',
@@ -6,25 +7,25 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-@Input()  usersFromHomeComponent: any;
-@Output() cancelRegister = new EventEmitter();
-public model: any;
+  @Output() cancelRegister = new EventEmitter();
+  model: any = {};
 
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
 
-public register(){
-  console.log(this.model); 
-}
+  register() {
+    this.accountService.register(this.model).subscribe(response => {
+      console.log(response);
+      this.cancel();
+    }, error => {
+      console.log(error);
+    })
+  }
 
-public cancel(){
-  this.cancelRegister.emit(false);    // to turn off the registerMode property in the parent
-  console.log("cancelled");
-
-
-}
-
+  cancel() {
+    this.cancelRegister.emit(false);
+  }
 
 }

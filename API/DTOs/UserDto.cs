@@ -6,4 +6,3 @@ namespace API.DTOs
         public string Token { get; set; }
     }
 }
-

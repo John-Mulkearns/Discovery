@@ -16,7 +16,7 @@ namespace API
             using var scope = host.Services.CreateScope();
             var services = scope.ServiceProvider;
             try 
-            {                var context = services.GetRequiredService<DataContext>();
+            {               var context = services.GetRequiredService<DataContext>();
                              await context.Database.MigrateAsync();
                              await PopulateDataStore.SeedUsers(context);   
                              await PopulateDataStore.SeedIslands(context) ;                                   
