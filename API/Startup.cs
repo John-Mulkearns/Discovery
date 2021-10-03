@@ -5,8 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using API.Extensions;
-
-
+using API.Shared.Middleware;
 
 namespace API
 {
@@ -28,7 +27,7 @@ namespace API
             services.AddIdentityServices(_config);
                 services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1.04" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1.07" });
             });
        
         }
@@ -38,11 +37,12 @@ namespace API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+           //     app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1"));
             }
 
+            app.UseMiddleware<ExceptionMiddleware>();
             app.UseHttpsRedirection();
 
             app.UseRouting();

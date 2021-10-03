@@ -5,6 +5,9 @@ import { ListsComponent } from './components/lists/lists/lists.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 import { MemberListComponent } from './components/members/member-list/member-list.component';
 import { MessagesComponent } from './components/messages/messages/messages.component';
+import { NotFoundComponent } from './shared/errors/not-found/not-found.component';
+import { ServerErrorComponent } from './shared/errors/server-error/server-error.component';
+import { TestErrorsComponent } from './shared/errors/test-errors/test-errors.component';
 import { AuthGuard } from './_guards/auth.guard';
 
 const routes: Routes = [
@@ -18,9 +21,12 @@ const routes: Routes = [
       {path: 'members/:id', component: MemberDetailComponent},
       {path: 'lists', component: ListsComponent},
       {path: 'messages', component: MessagesComponent},
-    ]
+         ]
   },
-  {path: '**', component: HomeComponent, pathMatch: 'full'},
+  {path: 'errors', component: TestErrorsComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: 'server-error', component: ServerErrorComponent},
+  {path: '**', component: HomeComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
