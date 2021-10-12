@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using API.Entities;
@@ -17,10 +19,10 @@ namespace API.Data
             if (  users == null) return;
             foreach (var user in users)
             {
-                 //    using var hmac = new HMACSHA512();
+                    using var hmac = new HMACSHA512();
                 user.UserName = user.UserName.ToLower();
-                  //  user.PasswordSalt = hmac.Key;
-                  //  user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
+                   user.PasswordSalt = hmac.Key;
+                   user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
 
                 await context.Users.AddAsync(user);
             }
@@ -37,14 +39,10 @@ namespace API.Data
             if (  islands == null) return;
             foreach (var island in islands)
             {
-                 //    using var hmac = new HMACSHA512();
-                island.IslandName = island.IslandName.ToLower();
-                  //  user.PasswordSalt = hmac.Key;
-                  //  user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes("Pa$$w0rd"));
-
-                await context.Islands.AddAsync(island);
-            }
-                await context.SaveChangesAsync();
+                    island.IslandName = island.IslandName.ToLower();
+                    await context.Islands.AddAsync(island);
+              }
+                    await context.SaveChangesAsync();
         }
  
 

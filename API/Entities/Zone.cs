@@ -11,16 +11,17 @@ namespace API.Entities
        
         [StringLength(100)]
         public string ZoneName { get; set; }
-        
+           [ForeignKey("MunicipioId")]
+            public int MunicipioId { get; set; }
+
+
         //[Column("postcode")]
  /*         public int? PostCode { get; set; }
         
         [Column("pop")]
         public int? Pop { get; set; }
 
-        [ForeignKey("MunicipioId")]
-
-        public int MunicipioId { get; set; }
+     
 
 
 
