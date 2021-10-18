@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,10 @@ import { SharedModule } from './shared/shared.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
+import { MemberCardComponent } from './components/members/member-card/member-card.component';
+import { JwtInterceptor } from './shared/interceptors/jwt.interceptor';
+import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
+import {TextInputComponent} from './shared/forms/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
     MemberListComponent,
     MemberDetailComponent,
     ListsComponent,
-    MessagesComponent
+    MessagesComponent,
+    MemberCardComponent,
+    MemberEditComponent,
+    TextInputComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +42,17 @@ import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
    
   ],
   exports: [BsDropdownModule, ToastrModule],
 
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true  }],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true  },
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
