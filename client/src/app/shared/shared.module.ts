@@ -6,7 +6,7 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import{TabsModule} from 'ngx-bootstrap/tabs';
-
+import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 
 @NgModule({
   declarations: [TestErrorsComponent, NotFoundComponent, ServerErrorComponent],
@@ -17,11 +17,13 @@ import{TabsModule} from 'ngx-bootstrap/tabs';
       positionClass: 'toast-bottom-right'
     }),
     TabsModule.forRoot(),
+    NgxGalleryModule
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
+    NgxGalleryModule
 
   ]
 })
