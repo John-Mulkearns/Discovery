@@ -1,47 +1,13 @@
 <form [formGroup]='registerForm' (ngSubmit)="register()" autocomplete="off">
     <h2 class="text-center text-primary">Sign up</h2>
     <hr>
-    <div class="form-group">
-        <input 
-        [class.is-invalid]='registerForm.get("username").errors && registerForm.get("username").touched'
-        type="text" class="form-control" formControlName='username' 
-        placeholder="Username"  >
-        <div class="invalid-feedback"> Please enter a user name </div>
-    </div>
 
-    <div class="form-group">
-        <input 
-        [class.is-invalid]='registerForm.get("password").errors && registerForm.get("password").touched'
-        type="password" class="form-control" formControlName='password'
-         placeholder="Password"  >
-         
-         <div *ngIf="registerForm.get('password').hasError('required')"
-         class="invalid-feedback"> Please enter a password </div>
-
-         <div *ngIf="registerForm.get('password').hasError('minlength')"
-         class="invalid-feedback"> password must be at least 4 characters</div>
-
-         <div *ngIf="registerForm.get('password').hasError('maxlength')"
-         class="invalid-feedback"> password must be at less than 8 characters</div>
-
-         
-    </div>
-
-    
-    <div class="form-group">
-        <input type="password" 
-         class="form-control" formControlName='confirmPassword'
-         placeholder="Confirm Password">
-
-
-         <div *ngIf="registerForm.get('confirmpassword').hasError('required')"
-         class="invalid-feedback"> Please enter a confirm password </div>
-
-         <div *ngIf="registerForm.get('confirmpassword').hasError('isMatching')"
-         class="invalid-feedback"> Confirm password must match password</div>
-
-    </div>
-
+      <!--🟪🟪 USERNAME 🟪🟪-->
+  
+  <app-text-input [formControl]='registerForm.controls["username"]' [label]='"Username"'></app-text-input>
+  <app-text-input [formControl]='registerForm.controls["password"]' [label]='"Password"' [type]='"password"'></app-text-input>
+  <app-text-input [formControl]='registerForm.controls["confirmPassword"]' [label]='"Confirm Password"' [type]='"password"'></app-text-input>
+  
 
 
     <div class="form-group text-center">

@@ -1,6 +1,20 @@
 # Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Extracts from dev log.
+✓. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+✓. Registration form changed from template to Reactive Form.
+✓. Reactive Reuseable Reactive form Controls used to replace initial reactive inputs.
+✓. Client side validation added with user feedback and custom validator.
+✓. Simplest type of password requirements maintained for dev as per request item #185.
+✓. Simple i18n functionality added thus far.
+✓. Form builder service added to initialize registration form.
+
+## incomplete
+
+✗. Spinning wheel of patience not added yet
+✗. Further toaster popups delayed
+✗. photoUrl prop missing from client model added but not documented in wiki
+
 
 ## Development server
 

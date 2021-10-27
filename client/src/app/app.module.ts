@@ -21,6 +21,9 @@ import { MemberCardComponent } from './components/members/member-card/member-car
 import { JwtInterceptor } from './shared/interceptors/jwt.interceptor';
 import { MemberEditComponent } from './components/members/member-edit/member-edit.component';
 import {TextInputComponent} from './shared/forms/text-input/text-input.component';
+import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+// import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,8 @@ import {TextInputComponent} from './shared/forms/text-input/text-input.component
     MessagesComponent,
     MemberCardComponent,
     MemberEditComponent,
-    TextInputComponent
+    TextInputComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ import {TextInputComponent} from './shared/forms/text-input/text-input.component
     BrowserAnimationsModule,
     FormsModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSpinnerModule
    
   ],
   exports: [BsDropdownModule, ToastrModule],
@@ -51,6 +56,7 @@ import {TextInputComponent} from './shared/forms/text-input/text-input.component
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true  },
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+    //,  {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
 
   bootstrap: [AppComponent]

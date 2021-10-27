@@ -23,9 +23,9 @@ export class MembersService {
       .pipe(map(members=>{this.members=members; return members;}))
     }
   
-    getMember(username: string) {
-const member = this.members.find(x=>x.username===username);
-if(member !=undefined) return of(member);
+    getMember(username: string) { 
+      const member = this.members.find(x=>x.username===username);
+      if(member !=undefined) return of(member);
 
 
       return this.http.get<Member>(this.baseUrl + 'users/' + username);
@@ -38,5 +38,13 @@ if(member !=undefined) return of(member);
         this.members[index]=member;
       }))
         }
+
+
+setMainPhoto(photoId: number){
+
+  return this.http.put(this.baseUrl + 'users/set-main-photo/' + photoId, {});
+}
+
+
 
 }
