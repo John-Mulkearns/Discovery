@@ -8,6 +8,8 @@ import { ServerErrorComponent } from './errors/server-error/server-error.compone
 import{TabsModule} from 'ngx-bootstrap/tabs';
 import {NgxGalleryModule} from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
+// import { DateInputComponent } from './forms/date-input/date-input.component';
 
 @NgModule({
   declarations: [TestErrorsComponent, NotFoundComponent, ServerErrorComponent],
@@ -19,14 +21,16 @@ import { FileUploadModule } from 'ng2-file-upload';
     }),
     TabsModule.forRoot(),
     NgxGalleryModule,
-    FileUploadModule
+    FileUploadModule,
+    BsDatepickerModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
     TabsModule,
     NgxGalleryModule,
-    FileUploadModule
+    FileUploadModule,
+    BsDatepickerModule
 
   ]
 })
