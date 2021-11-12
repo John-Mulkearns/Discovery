@@ -11,6 +11,9 @@ import { FileUploadModule } from 'ng2-file-upload';
 import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 // import { DateInputComponent } from './forms/date-input/date-input.component';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TimeagoModule } from 'ngx-timeago';
+
 
 @NgModule({
   declarations: [TestErrorsComponent, NotFoundComponent, ServerErrorComponent],
@@ -24,7 +27,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     NgxGalleryModule,
     FileUploadModule,
     BsDatepickerModule.forRoot(),
-    PaginationModule.forRoot()
+    PaginationModule.forRoot(), 
+    ButtonsModule.forRoot(),
+    TimeagoModule.forRoot()
   ],
   exports: [
     BsDropdownModule,
@@ -33,7 +38,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     NgxGalleryModule,
     FileUploadModule,
     BsDatepickerModule,
-    PaginationModule
+    PaginationModule,
+    ButtonsModule,
+    TimeagoModule
 
   ]
 })
