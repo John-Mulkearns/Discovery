@@ -4,14 +4,16 @@ using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20211112221131_LikeEntityAdded")]
+    partial class LikeEntityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,49 +87,6 @@ namespace API.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Islands");
-                });
-
-            modelBuilder.Entity("API.Entities.Message", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DateRead")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("MessegeSent")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("RecipientDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("RecipientId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RecipientUsername")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("SenderDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("SenderId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SenderUsername")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RecipientId");
-
-                    b.HasIndex("SenderId");
-
-                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("API.Entities.Municipio", b =>
@@ -223,25 +182,6 @@ namespace API.Data.Migrations
                     b.ToTable("Zone");
                 });
 
-            modelBuilder.Entity("API.Entities.Message", b =>
-                {
-                    b.HasOne("API.Entities.AppUser", "Recipient")
-                        .WithMany("MessagesRecieved")
-                        .HasForeignKey("RecipientId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("API.Entities.AppUser", "Sender")
-                        .WithMany("MessagesSent")
-                        .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Recipient");
-
-                    b.Navigation("Sender");
-                });
-
             modelBuilder.Entity("API.Entities.Municipio", b =>
                 {
                     b.HasOne("API.Entities.Island", "Island")
@@ -297,10 +237,6 @@ namespace API.Data.Migrations
                     b.Navigation("LikedByUsers");
 
                     b.Navigation("LikedUsers");
-
-                    b.Navigation("MessagesRecieved");
-
-                    b.Navigation("MessagesSent");
 
                     b.Navigation("Photos");
                 });

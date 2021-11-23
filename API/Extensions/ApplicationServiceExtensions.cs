@@ -21,8 +21,10 @@ namespace API.Extensions
          services.AddScoped<LogUserActivity>();
 
          services.AddScoped<IUserRepository, UserRepository>();
+         services.AddScoped<ILikesRepository, LikesRepository>();
+         services.AddScoped<IMessageRepository, MessageRepository>();
          services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
-         // passing automapper a slightly odd looking param that it needs to know where to find the profiles "assembly"
+         // passing automapper a slightly oddparam that it needs to know where to find the profiles "assembly"
 
          services.AddDbContext<DataContext>(options => 
            {  options.UseSqlServer(config.GetConnectionString("DefaultConnection"));    });
