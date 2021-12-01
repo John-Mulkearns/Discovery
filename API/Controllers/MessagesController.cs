@@ -13,7 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-[Authorize]    public class MessagesController : BaseApiController
+[Authorize]    
+        public class MessagesController : BaseApiController
     {
         public IUserRepository _userRepository { get; }
         public IMessageRepository _messageRepository { get; }
@@ -29,6 +30,8 @@ namespace API.Controllers
             _messageRepository = messageRepository;
            _userRepository = userRepository;
            }
+
+
 
   [HttpPost] 
   public async Task<ActionResult<MessageDto>> CreateMessage(CreateMessageDto createMessageDto)
@@ -66,8 +69,7 @@ namespace API.Controllers
 
 
 [HttpGet]  
-public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessagesForUser( [FromQuery] 
-                                          MessageParams messageParams)
+public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessagesForUser( [FromQuery] MessageParams messageParams)
                {
                         messageParams.Username=User.GetUsername();
                         var messages= await _messageRepository.GetMessagesForUser(messageParams);

@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files 
+
+.btnhelper {
+margin-left: 50%;
+float:left;
+
+}
+*/
 .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;

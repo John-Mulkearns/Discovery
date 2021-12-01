@@ -23,7 +23,9 @@ namespace API
         {
             services.AddApplicationServices(_config);
             services.AddControllers();
+
             services.AddCors();
+            
             services.AddIdentityServices(_config);
                 services.AddSwaggerGen(c =>
             {
@@ -47,7 +49,16 @@ namespace API
 
             app.UseRouting();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));
+          app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200")       );
+
+         app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4201")       );
+
+
+
+
+          
+
+
 
             app.UseAuthentication();
             app.UseAuthorization();

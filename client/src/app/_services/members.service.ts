@@ -1,16 +1,14 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Member } from '../../_models/member';
-import { environment } from '../../../environments/environment';
-import { of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Member } from '../_models/member';
+import { of, pipe } from 'rxjs';
 import { map, take } from 'rxjs/operators';
-import { PaginatedResult } from 'src/app/_models/pagination';
-import { UserParams } from 'src/app/_models/userParams';
-import { AccountService } from 'src/app/_services/account.service';
-import { User } from 'src/app/_models/user';
-import { getPaginatedResult, getPaginationHeaders } from 'src/app/_services/paginationHelper';
-
-
+import { PaginatedResult } from '../_models/pagination';
+import { UserParams } from '../_models/userParams';
+import { AccountService } from './account.service';
+import { User } from '../_models/user';
+import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
 @Injectable({
   providedIn: 'root'
@@ -90,46 +88,15 @@ export class MembersService {
     return this.http.delete(this.baseUrl + 'users/delete-photo/' + photoId);
   }
 
-
-  /*      moved to paginationHelper
-
-  private getPaginatedResult<T>(url, params) {
-    const paginatedResult: PaginatedResult<T> = new PaginatedResult<T>();
-    return this.http.get<T>(url, { observe: 'response', params }).pipe(
-      map(response => {
-        paginatedResult.result = response.body;
-        if (response.headers.get('Pagination') !== null) {
-          paginatedResult.pagination = JSON.parse(response.headers.get('Pagination'));
-        }
-        return paginatedResult;
-      })
-    );
+  addLike(username: string) {
+    return this.http.post(this.baseUrl + 'likes/' + username, {})
   }
 
-  private getPaginationHeaders(pageNumber: number, pageSize: number) {
-    let params = new HttpParams();
-
-    params = params.append('pageNumber', pageNumber.toString());
-    params = params.append('pageSize', pageSize.toString());
-
-    return params;
+  getLikes(predicate: string, pageNumber, pageSize) {
+    let params = getPaginationHeaders(pageNumber, pageSize);
+    params = params.append('predicate', predicate);
+    return getPaginatedResult<Partial<Member[]>>(this.baseUrl + 'likes', params, this.http);
   }
-*/
 
-
-addLike(username : string){
-  return this.http.post(this.baseUrl + 'likes/' + username, {})
+  
 }
-
-getLikes(predicate: string, pageNumber, pageSize){
-
-  let params= getPaginationHeaders(pageNumber, pageSize);
-  params=params.append('predicate', predicate);
-  return getPaginatedResult<Partial<Member[]>>(this.baseUrl +'likes', params, this.http)
-}
-
-
-
-}
-
-

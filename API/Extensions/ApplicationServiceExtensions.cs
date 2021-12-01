@@ -28,11 +28,16 @@ namespace API.Extensions
 
          services.AddDbContext<DataContext>(options => 
            {  options.UseSqlServer(config.GetConnectionString("DefaultConnection"));    });
+
+
+
+
 /*
-          services.AddDbContext<DataContext>(options =>
-            {               options.UseSqlite(config.GetConnectionString("DefaultSQLiteConnection"));   });
-            */
-                             return services;
+                                    services.AddDbContext<DataContext>(options =>
+                                      {               options.UseSqlite(config.GetConnectionString("DefaultSQLiteConnection"));   });
+                                      */
+                            
+        return services;
 
   }
 

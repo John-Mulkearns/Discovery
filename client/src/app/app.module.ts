@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { MemberListComponent } from './components/members/member-list/member-list.component';
 import { MemberDetailComponent } from './components/members/member-detail/member-detail.component';
 import { ListsComponent } from './components/lists/lists/lists.component';
-import { MessagesComponent } from './components/messages/messages/messages.component';
+import { MessagesComponent } from './components/messages/messages.component';
 import { SharedModule } from './shared/shared.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
@@ -23,8 +23,9 @@ import { MemberEditComponent } from './components/members/member-edit/member-edi
 import {TextInputComponent} from './shared/forms/text-input/text-input.component';
 import { PhotoEditorComponent } from './components/members/photo-editor/photo-editor.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-// import { LoadingInterceptor } from './_interceptors/loading.interceptor';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { DateInputComponent } from './shared/forms/date-input/date-input.component';
+import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DateInputComponent } from './shared/forms/date-input/date-input.compone
     MemberEditComponent,
     TextInputComponent,
     PhotoEditorComponent,
-    DateInputComponent
+    DateInputComponent,
+    MemberMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,7 @@ import { DateInputComponent } from './shared/forms/date-input/date-input.compone
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true  },
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
-    //,  {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+   ,  {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
   ],
 
   bootstrap: [AppComponent]
