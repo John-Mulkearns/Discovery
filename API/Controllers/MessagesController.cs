@@ -97,6 +97,34 @@ public async Task<ActionResult<IEnumerable<MessageDto>>> GetMessagesForUser( [Fr
 
 
 
+[HttpDelete("id")]
+public async Task<ActionResult> DeleteMessage(int id)
+{
+    var username=User.GetUsername();
+    var message= await _messageRepository.GetMessage(id);
+
+    if(message.Sender.UserName !=username && message.Recipient.UserName !=username) 
+    return Unauthorized();
+
+    if(message.Sender.UserName==username){
+    message.SenderDeleted=true;
+}
+
+    if(message.RecipientUsername==username){
+    message.RecipientDeleted=true;
+}
+    if(message.SenderDeleted && message.RecipientDeleted){
+    _messageRepository.DeleteMessage(message);
+}
+
+    if (await _messageRepository.SaveAllAsync()) {
+    return Ok();
+    }
+
+    
+    return BadRequest("System unable to delete the message");
+
+}
 
 
 

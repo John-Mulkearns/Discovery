@@ -11,7 +11,7 @@ import { MessageService } from 'src/app/_services/message.service';
 export class MemberMessagesComponent implements OnInit {
   @ViewChild('messageForm') messageForm: NgForm;
   @Input() messages: Message[];
-  @Input() username: string;
+  @Input() username: string;  //you get this frpom member detail component
   messageContent: string;
 
   constructor(private messageService: MessageService) { }
@@ -20,9 +20,10 @@ export class MemberMessagesComponent implements OnInit {
   }
 
   sendMessage() {
-    this.messageService.sendMessage(this.username, this.messageContent).subscribe(message => {
-      this.messages.push(message);
-      this.messageForm.reset();
+    this.messageService.sendMessage(this.username, this.messageContent)
+                                 .subscribe(message => {
+                            this.messages.push(message);
+                            this.messageForm.reset();
     })
   }
 
