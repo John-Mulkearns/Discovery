@@ -26,6 +26,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { DateInputComponent } from './shared/forms/date-input/date-input.component';
 import { MemberMessagesComponent } from './components/members/member-messages/member-messages.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { HasRoleDirective } from './_directives/has-role.directive';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { PhotoManagementComponent } from './admin/photo-management/photo-management.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { MemberMessagesComponent } from './components/members/member-messages/me
     TextInputComponent,
     PhotoEditorComponent,
     DateInputComponent,
-    MemberMessagesComponent
+    MemberMessagesComponent,
+    AdminPanelComponent,
+    HasRoleDirective,
+    UserManagementComponent,
+    PhotoManagementComponent
   ],
   imports: [
     BrowserModule,
