@@ -21,7 +21,7 @@ namespace API
             {               var context = services.GetRequiredService<DataContext>();
 
                              var userManager = services.GetRequiredService<UserManager<AppUser>>();
-                                var roleManager=services.GetRequiredService<RoleManager<AppRole>>();
+                             var roleManager=services.GetRequiredService<RoleManager<AppRole>>();
 
                              await context.Database.MigrateAsync(); 
                              await PopulateDataStore.SeedIslands(context) ;   
@@ -29,12 +29,16 @@ namespace API
                                                             
             }
           
+
+          
             catch (Exception ex)           
             {       var logger = services.GetRequiredService<ILogger<Program>>();
                      logger.LogError(ex, "An error occurred during migration");            }
 
                      await host.RunAsync();
         }
+
+
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using API.Extensions;
 using API.Shared.Middleware;
+using API.SignalR;
 
 namespace API
 {
@@ -27,9 +28,10 @@ namespace API
             services.AddCors();
             
             services.AddIdentityServices(_config);
+            services.AddSignalR();
                 services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1.07" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1.1" });
             });
        
         }
@@ -49,23 +51,22 @@ namespace API
 
             app.UseRouting();
 
-          app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200")       );
+          app.UseCors(x => x.AllowAnyHeader()
+                                       .AllowAnyMethod()
+                                       .AllowCredentials()
+                                       .WithOrigins("https://localhost:4200")       );
 
         // app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4201")       );
 
-
-
-
-          
-
-
-
+       
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<PresenceHub>("hubs/presence");
+                  endpoints.MapHub<MessageHub>("hubs/message");
             });
         }
     }

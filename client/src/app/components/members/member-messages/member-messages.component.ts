@@ -14,17 +14,14 @@ export class MemberMessagesComponent implements OnInit {
   @Input() username: string;  //you get this frpom member detail component
   messageContent: string;
 
-  constructor(private messageService: MessageService) { }
+  constructor(public messageService: MessageService) { }
 
   ngOnInit(): void {
   }
 
   sendMessage() {
     this.messageService.sendMessage(this.username, this.messageContent)
-                                 .subscribe(message => {
-                            this.messages.push(message);
-                            this.messageForm.reset();
-    })
+                                 .then( () => {    this.messageForm.reset();    })
   }
 
 }
