@@ -63,9 +63,9 @@ the left and the area/s where they were applied within the Web Application on th
 
 | techical feature                               | Cool  |
 | --------------------------------------------:| ----:|
-| col 3 is                                          | $1600 |
-| col 2 is                                           |   $12 |
-| zebra stripes       |    $1 |
+| col 3 is                                          | cubit007 |
+| col 2 is                                           |   yyyy |
+| quantum       |    1 |
 
 
 
