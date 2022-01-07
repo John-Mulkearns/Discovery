@@ -14,10 +14,6 @@ Extracts from dev log.
 ✓. Basic password requirements maintained for dev's simple          interactions as user.
 
 ✓. Simple i18n functionality added thus far
-comment: Returning the what server side detection of the accept language finds in the client request header to a general client application wide angular service
-is a fairly standard approach to deciding what language to present the opening screen and controls in, with the lazy loading of feature based modules
-it suggest the translated "labels" be loaded along with other feature components as part of the lazy approach.
-If the user selects another language other than that first detected then updating other requested features already loaded will be needed. 
 
 ✓. Form builder service added to initialize registration form.
 
