@@ -1,9 +1,9 @@
 # Discovery
 
 ### This repo has 33 commits, the following list identifies more than 175 distinctive steps, 
-each of which might have involved multiple individual commits would have brought the total to over 1000 commits.
+each one of which might have itself have involved multiple individual commits, possibly bringing the repo total to 1000 commits.
 
-> So either way as a record of work activity these are simplifications
+_So either way as a record of work activity these 33 repo commit titles are summaries_
 
 
 1. Creating the .Net API Project using the dotnet CLI.
@@ -32,159 +32,159 @@ each of which might have involved multiple individual commits would have brought
 
 1. Making HTTP requests in Angular.
 
-Adding CORS support in the API.
+1. Adding CORS support in the API.
 
-Displaying the fetched users in the browser.
+1. Displaying the fetched users in the browser.
 
-Adding bootstrap and font-awesome. 
+1. Adding bootstrap and font-awesome. 
  
-Safe storage of passwords.
+1. Safe storage of passwords.
 
-Updating the user entity.
+1. Updating the user entity.
 
-Creating a base API controller.
+1. Creating a base API controller.
 
-Creating an Account Controller with a register endpoint.
+1. Creating an Account Controller with a register endpoint.
 
-Using the debugger.
+1. Using the debugger.
 
-Using DTOs.
+1. Using DTOs.
 
-Adding validation.
+1. Adding validation.
 
-Adding a login endpoint.
+1. Adding a login endpoint.
 
-JSON web tokens.
+1. JSON web tokens.
 
-Adding a token service.
+1. Adding a token service.
 
-Adding the create token logic.
+1. Adding the create token logic.
 
-Creating a User DTO and returning the token.
+1. Creating a User DTO and returning the token.
 
-Adding the authentication middleware.
+1. Adding the authentication middleware.
 
-Adding extension methods.
+1. Adding extension methods.
 
-Client login and register
+1. Client login and register
 
-Creating Angular client nav bar.
+1. Creating Angular client nav bar.
 
-template forms and services.
+1. template forms and services.
 
-Injecting services into components.
+1. Injecting services into components.
 
-Conditionals to show and remove content.
+1. Conditionals to show and remove content.
 
 Bootstrap components e.g dropdown.
 
-Observables, persisting the login.
+1. Observables, persisting the login.
 
-async pipes.
+1. async pipes.
 
-Parent child, child-parent communication.
+1. Parent child, child-parent communication.
 
-client routing with nav links and in code.
+1. client routing with nav links and in code.
 
-Toast service for notifications and route guard.
+1. Toast service for notifications and route guard.
 
-Adding a dummy route.
+1. Adding a dummy route.
 
-Adding a new theme.
+1. Adding a new theme.
 
-Error handling via error controller for testing errors.
+1. Error handling via error controller for testing errors.
 
-Handling server errors.
+1. Handling server errors.
 
-Exception handling middleware, error interceptor.
+1. Exception handling middleware, error interceptor.
 
-Validation errors.
+1. Validation errors.
 
-Handling not found.
+1. Handling not found.
 
-API extensions
+1. API extensions
 
-Extending the user entity
+1. Extending the user entity
 
-Adding a DateTime extension to calculate age.
+1. Adding a DateTime extension to calculate age.
 
-Entity Framework relationships.
+1. Entity Framework relationships.
 
-Generating seed data.
+1. Generating seed data.
 
-Creating a repository.
+1. Creating a repository.
 
-Updating the users controller.
+1. Updating the users controller.
 
-Adding a DTO for Members.
+1. Adding a DTO for Members.
 
-Adding configuring and using AutoMapper.
+1. Adding configuring and using AutoMapper.
 
-Using AutoMapper queryable extensions.
-
-
-Building the User Interface
-
-Introduction.
-
-Using TypeScript.
-
-Creating the member interface.
-
-Adding a member service.
-
-Retrieving the list of members.
-
-Creating styled member cards with animated buttons.
-
-Using an interceptor to send the token.
-
-Adding a photo gallery.
+1. Using AutoMapper queryable extensions.
 
 
-Creating a member edit component.
+1. Building the User Interface
 
-Creating the edit template form.
+1. Introduction.
 
-Adding the update functionality.
+1. Using TypeScript.
 
-Adding a Can Deactivate route guard.
+1. Creating the member interface.
 
-Persisting the changes in the API.
+1. Adding a member service.
 
-Updating the user in the client app.
+1. Retrieving the list of members.
 
-Adding loading indicators.
+1. Creating styled member cards with animated buttons.
 
-Using the service to store state.
+1. Using an interceptor to send the token.
 
-photo upload functionality
+1. Adding a photo gallery.
 
-3rd part photo hosting API Cloudinary Account.
 
-Configuring cloudinary in the API.
+1. Creating a member edit component.
 
-Using the Created At Route method.
+1. Creating the edit template form.
 
-Adding a photo editor component.
+1. Adding the update functionality.
 
-Adding a photo uploader.
+1. Adding a Can Deactivate route guard.
 
-Setting the main photo in the API.
+1. Persisting the changes in the API.
 
-Adding the main photo image to the nav bar.
+1. Updating the user in the client app.
 
-Setting the main photo in the client.
+1. Adding loading indicators.
 
-Deleting photos - API.
+1. Using the service to store state.
 
-Deleting photos - Client.
+1. photo upload functionality
 
-Reactive forms
+1. 3rd part photo hosting API Cloudinary Account.
 
-Reactive forms with Client-side validation.
+1. Configuring cloudinary in the API.
 
-Adding custom validators.
+1. Using the Created At Route method.
+
+1. Adding a photo editor component.
+
+1. Adding a photo uploader.
+
+1. Setting the main photo in the API.
+
+1. Adding the main photo image to the nav bar.
+
+1. Setting the main photo in the client.
+
+1. Deleting photos - API.
+
+1. Deleting photos - Client.
+
+1. Reactive forms
+
+1. Reactive forms with Client-side validation.
+
+1. Adding custom validators.
 
 Validation feedback.
 
