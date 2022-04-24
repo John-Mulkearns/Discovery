@@ -76,7 +76,7 @@ _So either way as a record of work activity these 33 repo commit titles are summ
 
 1. Conditionals to show and remove content.
 
-Bootstrap components e.g dropdown.
+1. Bootstrap components e.g dropdown.
 
 1. Observables, persisting the login.
 
@@ -186,180 +186,179 @@ Bootstrap components e.g dropdown.
 
 1. Adding custom validators.
 
-Validation feedback.
+1. Validation feedback.
 
-Creating a reusable text input.
+1. Creating a reusable text input.
 
-Using the form builder service.
+1. Using the form builder service.
 
-Expanding the register form.
+1. Expanding the register form.
 
-Adding a reusable date input.
+1. Adding a reusable date input.
 
-Updating the API register method.
+1. Updating the API register method.
 
-Client-side registration.
-
-
-
-Paging, Sorting and Filtering
-
-Adding a paged list class.
-
-Adding helper classes for pagination.
-
-Using the pagination classes.
-
-Setting up client pagination.
-
-Using the angular bootstrap pagination component.
-
-Adding filtering to the API.
-
-Adding additional filters.
-
-Cleaning up the member service.
-
-Adding filter buttons to the client.
-
-Adding sorting functionality.
-
-Adding an action filter.
-
-Making the Last Active action filter more optimal.
-
-Sorting on the client.
-
-Formatting dates.
-
-Restoring the caching for members.
-
-Restoring caching for member detailed.
-
-Remembering the filters for a user in the service.
+1. Client-side registration.
 
 
-Adding Feature User Likes 
 
-Adding entity, repository and Implementation
+1. Paging, Sorting and Filtering
 
-Adding Feature messaging
+1. Adding a paged list class.
 
-Setting up the entities for messaging.
+1. Adding helper classes for pagination.
 
-Setting up the message repository.
+1. Using the pagination classes.
 
-Setting up the automapper profiles.
+1. Setting up client pagination.
 
-Adding a message controller.
+1. Using the angular bootstrap pagination component.
 
-Getting the messages from the Repo.
+1. Adding filtering to the API.
 
-Getting the message thread for 2 users.
+1. Adding additional filters.
 
-Setting up the Angular app for messaging.
+1. Cleaning up the member service.
 
-Designing the inbox.
+1. Adding filter buttons to the client.
 
-Adding the message thread in the client.
+1. Adding sorting functionality.
 
-Styling the message thread.
+1. Adding an action filter.
 
-Activating the message tab.
+1. Making the Last Active action filter more optimal.
 
-Using query params.
+1. Sorting on the client.
 
-Using route resolvers.
+1. Formatting dates.
 
-Sending messages.
+1. Restoring the caching for members.
 
-Deleting messages on the API.
+1. Restoring caching for member detailed.
 
-Deleting messages on the client.
+1. Remembering the filters for a user in the service.
 
 
-Setting up Identity and role management entities.
+1. Adding Feature User Likes 
 
- Configuring the DbContext.
+1. Adding entity, repository and Implementation
+
+1. Adding Feature messaging
+
+1. Setting up the entities for messaging.
+
+1. Setting up the message repository.
+
+1. Setting up the automapper profiles.
+
+1. Adding a message controller.
+
+1. Getting the messages from the Repo.
+
+1. Getting the message thread for 2 users.
+
+1. Setting up the Angular app for messaging.
+
+1. Designing the inbox.
+
+1. Adding the message thread in the client.
+
+1. Styling the message thread.
+
+1. Activating the message tab.
+
+1. Using query params.
+
+1. Using route resolvers.
+
+1. Sending messages.
+
+1. Deleting messages on the API.
+
+1. Deleting messages on the client.
+
+1. Setting up Identity and role management entities.
+
+ 1. Configuring the DbContext.
  
- Configuring the startup class.
+ 1. Configuring the startup class.
  
- Refactoring and adding a new migration / seeding
+ 1. Refactoring and adding a new migration / seeding
  
-Updating the account controller.
+1. Updating the account controller.
 
-Adding roles to the app.
+1. Adding roles to the app.
 
-Adding the roles to the JWT token.
+1. Adding the roles to the JWT token.
 
-Adding policy-based authorisation. 208
+1. Adding policy-based authorisation. 208
 
-Getting the users with roles.
+1. Getting the users with roles.
 
-Editing user roles.
+1. Editing user roles.
 
-Adding an admin component.
+1. Adding an admin component.
 
-Adding an admin guard.
+1. Adding an admin guard.
 
-Adding a custom directive.
+1. Adding a custom directive.
 
-Adding the edit roles component.
+1. Adding the edit roles component.
 
-Setting up modals.
+1. Setting up modals.
 
-Editing roles in the client.
+1. Editing roles in the client.
 
-SignalR presence hub, authenticating Client. 
+1. SignalR presence hub, authenticating Client. 
 
-Adding aand displaying presence tracker.
+1. Adding aand displaying presence tracker.
 
-Creating a message hub.
+1. Creating a message hub.
 
-Adding the send message method to the hub.
+1. Adding the send message method to the hub.
 
-Adding the hub connection to the message service.
+1. Adding the hub connection to the message service.
 
-Refactoring the message components to use the hub.
+1. Refactoring the message components to use the hub.
 
-Sending messages via the hub.
+1. Sending messages via the hub.
 
-Tracking the message groups.
+1. Tracking the message groups.
 
-Updating the message hub with group tracking.
+1. Updating the message hub with group tracking.
 
-Dealing with UTC date formats.
+1. Dealing with UTC date formats.
 
-Notifying users when they receive a message.
+1. Notifying users when they receive a message.
 
-Optimizing the presence and messages.
+1. Optimizing the presence and messages.
 
-Applying Unit of work pattern and finishing touches
+1. Applying Unit of work pattern and finishing touches
 
-Refactoring the controllers to use the unit of work.
+1. Refactoring the controllers to use the unit of work.
 
-Query Optimization
+1. Query Optimization
 
-UTC dates.
+1. UTC dates.
 
-Adding a confirmation service to the angular app.
+1. Adding a confirmation service to the angular app.
 
-Getting the data from the confirmation modal.
+1. Getting the data from the confirmation modal.
 
-Tidying up the member message component.
+1. Tidying up the member message component.
 
-Photo management challenge.
+1. Photo management challenge.
 
 
-Publishing
+1. Publishing to Azure
 
-Preparing angular and serving this from the API server.
+1. Preparing angular and serving this from the API server.
 
-Adding a fallback controller.
+1. Adding a fallback controller.
 
-Creating an angular production build.
+1. Creating an angular production build.
 
-Using branches in git and connecting Azure to GitHub.
+1. Using branches in git and connecting Azure to GitHub.
 
-Merging changes and redeploying.
+1. Merging changes and redeploying.
 
