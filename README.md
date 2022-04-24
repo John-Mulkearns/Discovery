@@ -1,9 +1,9 @@
 # Discovery
 
-### This repo has 33 commits, the following list identifies more than 175 distinctive steps, 
-each one of which might have itself have involved multiple individual commits, possibly bringing the repo total to 1000 commits.
+### This repo has 33 commits, the following list identifies 174 distinctive steps effectively contained in the repos.
+depending upon how the development was performed, each one of these steps which might have itself have involved multiple individual commits, possibly bringing the repo total to 1000 commits. In the case of using TDD or Test "During" Development, niether of which were employed here, its not unrealistic to say that the total number of commits in this repo could have reached several thousand.
 
-_So either way as a record of work activity these 33 repo commit titles are summaries_
+_So whilst the 33 are true a summary record of work activity they are not simplifictions.
 
 
 1. Creating the .Net API Project using the dotnet CLI.
