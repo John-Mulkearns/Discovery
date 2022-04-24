@@ -6,11 +6,11 @@ each of which might have involved multiple individual commits would have brought
 > So either way as a record of work activity these are simplifications
 
 
--Creating the .Net API Project using the dotnet CLI.
+- Creating the .Net API Project using the dotnet CLI.
 
--Setting up VS code to work with C#.
+- Setting up VS code to work with C#.
 
--Getting to know the API project files.
+- Getting to know the API project files.
 
 Creating intial Entitues.
 
