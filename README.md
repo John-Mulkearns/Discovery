@@ -1,8 +1,11 @@
 # Discovery
 
 Creating the .Net API Project using the dotnet CLI.
+
 Setting up VS code to work with C#.
+
 Getting to know the API project files.
+
 Creating intial Entitues.
 Adding Entity Framework to use DbContext and migrations.
 Adding a new API Controller.
