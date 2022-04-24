@@ -12,25 +12,25 @@ each of which might have involved multiple individual commits would have brought
 
 1. Getting to know the API project files.
 
-Creating intial Entitues.
+1. Creating intial Entitues.
 
-Adding Entity Framework to use DbContext and migrations.
+1. Adding Entity Framework to use DbContext and migrations.
 
-Adding a new API Controller.
+1. Adding a new API Controller.
 
-Making  code Asynchronous.
+1. Making  code Asynchronous.
 
  
 
-Angular
+1. Angular
 
-Creating the Angular application.
+1. Creating the Angular application.
 
-Running and reviewing bootstrapping the app.
+1. Running and reviewing bootstrapping the app.
 
-Adding VS Code extensions to work with Angular.
+1. Adding VS Code extensions to work with Angular.
 
-Making HTTP requests in Angular.
+1. Making HTTP requests in Angular.
 
 Adding CORS support in the API.
 
