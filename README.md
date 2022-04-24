@@ -1,6 +1,9 @@
 # Discovery
 
-### Whilst there are only 33 commits shown here, the following list of more than 175 distinctive steps, each of which might have involved multiple individual commits would have brought the total to over 1000 commits, so either way as a record of work activity these are simplifications
+### This repo has 33 commits, the following list identifies more than 175 distinctive steps, 
+each of which might have involved multiple individual commits would have brought the total to over 1000 commits.
+
+> So either way as a record of work activity these are simplifications
 
 
 Creating the .Net API Project using the dotnet CLI.
